@@ -16,6 +16,10 @@
       window.gsap.registerPlugin(window.ScrollToPlugin);
     }
 
+    if (window.ScrollSmoother) {
+      window.gsap.registerPlugin(window.ScrollSmoother);
+    }
+
     window.gsap.defaults({
       duration: 0.75,
       ease: 'power2.out',
@@ -214,9 +218,15 @@
         const header = select('.header');
         const offsetY = header ? header.offsetHeight + 12 : 0;
 
-        if (reducedMotion || typeof window.gsap === 'undefined' || typeof window.ScrollToPlugin === 'undefined') {
+        if (reducedMotion || typeof window.gsap === 'undefined') {
           const top = target.getBoundingClientRect().top + window.pageYOffset - offsetY;
           window.scrollTo({ top, behavior: reducedMotion ? 'auto' : 'smooth' });
+          smoothFocusTarget(target);
+          return;
+        }
+
+        if (window._smoother) {
+          window._smoother.scrollTo(target, true, 'top ' + offsetY + 'px');
           smoothFocusTarget(target);
           return;
         }
@@ -521,52 +531,21 @@
     }
   };
 
-  // ── Smooth mouse-wheel scroll (lerp) ──────────────────────────────────────
-  // Uses requestAnimationFrame lerp so GSAP ScrollTrigger gets real scrollY.
-  const initSmoothWheel = () => {
-    // Skip: touch-primary devices, reduced motion, or no wheel support
-    if (reducedMotion) return;
-    if (window.matchMedia('(hover: none)').matches) return;
+  const initScrollSmoother = (gsapReady) => {
+    if (!gsapReady || reducedMotion) return;
+    if (typeof window.ScrollSmoother === 'undefined') return;
 
-    let targetY = window.scrollY;
-    let currentY = window.scrollY;
-    let rafId = null;
-    const LERP = 0.085; // 0–1: lower = more smoothing
+    const wrapper = document.getElementById('smooth-wrapper');
+    const content = document.getElementById('smooth-content');
+    if (!wrapper || !content) return;
 
-    const lerp = (a, b, t) => a + (b - a) * t;
-
-    const tick = () => {
-      const diff = targetY - currentY;
-      if (Math.abs(diff) < 0.5) {
-        currentY = targetY;
-        window.scrollTo(0, currentY);
-        rafId = null;
-        return;
-      }
-      currentY = lerp(currentY, targetY, LERP);
-      window.scrollTo(0, currentY);
-      rafId = requestAnimationFrame(tick);
-    };
-
-    window.addEventListener('wheel', (e) => {
-      if (e.ctrlKey || e.metaKey) return; // Allow browser zoom
-      e.preventDefault();
-
-      const maxY = document.documentElement.scrollHeight - window.innerHeight;
-      targetY = Math.min(Math.max(targetY + e.deltaY, 0), maxY);
-
-      if (!rafId) {
-        rafId = requestAnimationFrame(tick);
-      }
-    }, { passive: false });
-
-    // Keep state in sync when scrolled by keyboard / scrollbar / anchor
-    window.addEventListener('scroll', () => {
-      if (!rafId) {
-        targetY = window.scrollY;
-        currentY = window.scrollY;
-      }
-    }, { passive: true });
+    window._smoother = window.ScrollSmoother.create({
+      wrapper,
+      content,
+      smooth: 1,
+      effects: true,
+      smoothTouch: 0.1,
+    });
   };
 
   const initParallaxDepth = (gsapReady) => {
@@ -616,6 +595,9 @@
   const initMain = () => {
     const gsapReady = initGsapCore();
 
+    // ScrollSmoother must be created before any ScrollTriggers
+    initScrollSmoother(gsapReady);
+
     setNavActiveByPath();
     initHeaderState(gsapReady);
     initMobileNav();
@@ -625,7 +607,6 @@
     initDataAnimations(gsapReady);
     initAutoReveal(gsapReady);
     initScrubEffects(gsapReady);
-    initSmoothWheel();
     initParallaxDepth(gsapReady);
   };
 
