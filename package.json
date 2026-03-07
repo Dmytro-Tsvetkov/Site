@@ -1,0 +1,22 @@
+{
+  "name": "photoblog-site",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev":    "gulp",
+    "watch":  "gulp watch",
+    "build":  "gulp build",
+    "styles": "gulp styles"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "gulp":         "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass":    "^5.1.0",
+    "postcss":      "^8.5.3",
+    "sass":         "^1.93.0"
+  },
+  "dependencies": {
+    "gsap": "^3.14.2"
+  }
+}

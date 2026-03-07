@@ -1,0 +1,49 @@
+@use '../abstracts/variables' as *;
+
+.statistics {
+  background: var(--color-primary);
+}
+
+.stat {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.stat__item {
+  flex: 1 1 50%;
+  padding: 32px 14px;
+  border: 1px solid #b5eae0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.stat__number {
+  margin-bottom: 8px;
+  font-size: clamp(32px, 8vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat__text {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: $bp-md) {
+  .stat__item {
+    flex: 1 1 33.333%;
+    padding: 44px 20px;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .stat {
+    flex-wrap: nowrap;
+  }
+
+  .stat__item {
+    flex: 1 1 0;
+    padding: 56px 24px;
+  }
+}

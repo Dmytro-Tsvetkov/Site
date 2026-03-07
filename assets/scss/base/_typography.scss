@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *;
+
+.section__suptitle {
+  font-family: var(--font-accent);
+  font-size: 20px;
+  color: var(--color-text);
+}
+
+.section__title {
+  font-size: clamp(24px, 7vw, 34px);
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.section__title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 18px auto;
+  background: var(--color-accent);
+}
+
+.section__text {
+  color: var(--color-muted);
+}
+
+@media (min-width: $bp-md) {
+  .section__suptitle {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .section__suptitle {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/0828df9c19.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>PhotoBlog Work</title>
+</head>
+<body>
+<header class="header header--static">
+  <div class="container">
+    <div class="header__inner">
+      <a class="header__logo" href="index.html" aria-label="PhotoBlog home"><img class="header__logo-image" src="assets/images/logo.png" alt="PhotoBlog logo"></a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span></button>
+      <nav class="nav" id="site-nav" data-nav>
+        <a class="nav__link" href="index.html">About</a>
+        <a class="nav__link" href="services.html">Service</a>
+        <a class="nav__link" href="blog.html">Blog</a>
+        <a class="nav__link active" href="work.html">Work</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero page-hero--work" data-parallax-bg="0.1">
+  <div class="container">
+    <div class="page-hero__inner">
+      <p class="page-hero__eyebrow" data-anim="fade-in">Recent Stories</p>
+      <h1 class="page-hero__title" data-anim="fade-up">Work</h1>
+      <p class="page-hero__text" data-anim="fade-up">A selection of travel, street, and portrait stories captured for editorial clients.</p>
+      <div class="page-hero__actions" data-anim="fade-up">
+        <a class="btn" href="#work-grid">View projects</a>
+        <a class="btn btn--ghost" href="contact.html">Start project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container">
+    <article class="featured-case" data-anim="fade-up">
+      <img class="featured-case__image" src="assets/images/works/5.jpg" alt="Featured case">
+      <div class="featured-case__content">
+        <h3 class="section__suptitle">Featured case</h3>
+        <h2 class="section__title">Northern Coast Photo Essay</h2>
+        <p class="section__text">A 3-day production with mixed weather conditions, resulting in a 42-image narrative for a travel publication and social short-form campaign.</p>
+        <a class="btn btn--solid" data-anim="fade-up" href="contact.html">Request similar project</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="work-grid" data-work-root>
+  <div class="container">
+    <div class="section__header" data-anim="fade-up">
+      <h3 class="section__suptitle">Portfolio</h3>
+      <h2 class="section__title">Recent Projects</h2>
+    </div>
+
+    <div class="work-filter">
+      <button class="filter-btn is-active" type="button" data-work-filter="all">All</button>
+      <button class="filter-btn" type="button" data-work-filter="travel">Travel</button>
+      <button class="filter-btn" type="button" data-work-filter="street">Street</button>
+      <button class="filter-btn" type="button" data-work-filter="portrait">Portrait</button>
+    </div>
+
+    <div class="work-grid" data-anim="fade-up">
+      <article class="work-card" data-work-card data-category="travel"><img src="assets/images/works/1.jpg" alt="Mountain morning"><div class="work-card__info"><h3 class="work-card__title">Mountain Morning</h3><p class="work-card__category">Travel</p></div></article>
+      <article class="work-card" data-work-card data-category="travel"><img src="assets/images/works/2.jpg" alt="Roadside frame"><div class="work-card__info"><h3 class="work-card__title">Roadside Frame</h3><p class="work-card__category">Travel</p></div></article>
+      <article class="work-card" data-work-card data-category="street"><img src="assets/images/works/3.jpg" alt="Urban evening"><div class="work-card__info"><h3 class="work-card__title">Urban Evening</h3><p class="work-card__category">Street</p></div></article>
+      <article class="work-card" data-work-card data-category="travel"><img src="assets/images/works/4.jpg" alt="Coastline portrait"><div class="work-card__info"><h3 class="work-card__title">Coastline Portrait</h3><p class="work-card__category">Travel</p></div></article>
+      <article class="work-card" data-work-card data-category="travel"><img src="assets/images/works/5.jpg" alt="Hillside light"><div class="work-card__info"><h3 class="work-card__title">Hillside Light</h3><p class="work-card__category">Travel</p></div></article>
+      <article class="work-card" data-work-card data-category="street"><img src="assets/images/works/6.jpg" alt="Street detail"><div class="work-card__info"><h3 class="work-card__title">Street Detail</h3><p class="work-card__category">Street</p></div></article>
+      <article class="work-card" data-work-card data-category="street"><img src="assets/images/works/7.jpg" alt="Night motion"><div class="work-card__info"><h3 class="work-card__title">Night Motion</h3><p class="work-card__category">Street</p></div></article>
+      <article class="work-card" data-work-card data-category="portrait"><img src="assets/images/team/1.png" alt="Outdoor portrait"><div class="work-card__info"><h3 class="work-card__title">Outdoor Portrait</h3><p class="work-card__category">Portrait</p></div></article>
+      <article class="work-card" data-work-card data-category="portrait"><img src="assets/images/team/2.png" alt="Editorial portrait"><div class="work-card__info"><h3 class="work-card__title">Editorial Portrait</h3><p class="work-card__category">Portrait</p></div></article>
+      <article class="work-card" data-work-card data-category="portrait"><img src="assets/images/team/3.png" alt="Studio portrait"><div class="work-card__info"><h3 class="work-card__title">Studio Portrait</h3><p class="work-card__category">Portrait</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section__header" data-anim="fade-up">
+      <h3 class="section__suptitle">Tools & workflow</h3>
+      <h2 class="section__title">How We Build Projects</h2>
+    </div>
+    <div class="workflow-grid" data-anim="fade-up">
+      <article class="workflow-item"><h3>Shotlist</h3><p>Reference board, locations, and backup scenes before fieldwork starts.</p></article>
+      <article class="workflow-item"><h3>Capture</h3><p>Wide-medium-detail sequence for every story segment.</p></article>
+      <article class="workflow-item"><h3>Post</h3><p>Color consistency and export presets for web and social.</p></article>
+      <article class="workflow-item"><h3>Delivery</h3><p>Organized folders, metadata, and copy-ready image captions.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container">
+    <div class="section__header" data-anim="fade-up">
+      <h3 class="section__suptitle">Client quotes</h3>
+      <h2 class="section__title">What teams mention most</h2>
+    </div>
+
+    <div class="work-quotes" data-anim="fade-up">
+      <article class="work-quote"><p>"Clean communication and reliable delivery. Every frame was usable."</p><span>- Atlas Travel</span></article>
+      <article class="work-quote"><p>"The final gallery looked premium without feeling over-edited."</p><span>- Northline Studio</span></article>
+      <article class="work-quote"><p>"They made our blog and socials feel like one coherent visual story."</p><span>- Framehouse</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="section work-cta">
+  <div class="container u-text-center">
+    <h2 class="section__title">Have a project in mind?</h2>
+    <p class="section__text">Tell us the destination, timeline, and expected deliverables.</p>
+    <div class="u-mt-lg"><a class="btn btn--solid" data-anim="fade-up" href="contact.html">Book a call</a></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__col footer__col--first">
+        <div class="footer__logo"><a class="footer__name" href="index.html">PhotoBlog</a></div>
+        <div class="footer__text">PhotoBlog is a visual journal focused on travel, street, and environmental photography. We publish image-first stories with concise writing and practical shooting notes.</div>
+        <div class="footer__social">
+          <div class="footer__social-header"><b>22k</b> followers</div>
+          <div class="footer__social-content">
+            Follow Us:
+            <a href="#" target="_blank" rel="noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank" rel="noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" rel="noreferrer"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <form class="subscribe" action="#" method="post">
+          <input class="subscribe__input" type="email" name="email" placeholder="Your Email..." aria-label="Email address">
+          <button class="subscribe__btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer__col footer__col--second">
+        <div class="footer__title">Blogs</div>
+        <div class="blogs">
+          <div class="blogs__item"><img class="blogs__img" src="assets/images/blog/1.png" alt="Blog preview"><div class="blogs__content"><a class="blogs__title" href="blog.html">How to plan a sunrise field shoot</a><div class="blogs__date">Jan 27, 2026</div></div></div>
+          <div class="blogs__item"><img class="blogs__img" src="assets/images/blog/2.png" alt="Blog preview"><div class="blogs__content"><a class="blogs__title" href="blog.html">Travel portraits without staged poses</a><div class="blogs__date">Jan 18, 2026</div></div></div>
+          <div class="blogs__item"><img class="blogs__img" src="assets/images/blog/3.png" alt="Blog preview"><div class="blogs__content"><a class="blogs__title" href="blog.html">Editing a moody urban series</a><div class="blogs__date">Jan 4, 2026</div></div></div>
+        </div>
+      </div>
+      <div class="footer__col footer__col--third">
+        <div class="footer__title">Instagram</div>
+        <div class="instagram">
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/1.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/2.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/3.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/4.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/5.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/6.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/7.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/8.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/9.jpg" alt="Instagram shot"></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">@ 2026 PhotoBlog <span>service for your photos</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/work.js"></script>
+</body>
+</html>
+
+
+

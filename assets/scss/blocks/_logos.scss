@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 20px;
+}
+
+.logos__item {
+  display: flex;
+  justify-content: center;
+}
+
+.logos__item img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.logos__item:hover img {
+  opacity: 1;
+}
+
+@media (min-width: $bp-md) {
+  .logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .logos {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}

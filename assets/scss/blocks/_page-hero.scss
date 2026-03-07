@@ -1,0 +1,107 @@
+@use '../abstracts/variables' as *;
+
+// Shared hero for all inner pages (blog, services, work, contact)
+.page-hero {
+  min-height: 44vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 100px 0 40px;
+  background:
+    linear-gradient(to bottom, rgba(14, 30, 24, 0.72) 0%, rgba(14, 30, 24, 0.52) 60%, rgba(14, 30, 24, 0.76) 100%),
+    url('../images/intro.jpg') center / cover no-repeat;
+}
+
+.page-hero__inner {
+  max-width: 760px;
+}
+
+.page-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+}
+
+.page-hero__eyebrow::before {
+  content: '';
+  flex-shrink: 0;
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-primary-light);
+}
+
+.page-hero__title {
+  font-size: clamp(36px, 9vw, 76px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.page-hero__text {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.84);
+  max-width: 54ch;
+  font-size: clamp(14px, 3.4vw, 17px);
+  line-height: 1.65;
+}
+
+.page-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+// Page-specific hero backgrounds
+.page-hero--blog {
+  background-image:
+    linear-gradient(to bottom, rgba(14, 30, 24, 0.7) 0%, rgba(14, 30, 24, 0.48) 60%, rgba(14, 30, 24, 0.78) 100%),
+    url('../images/works/7.jpg');
+}
+
+.page-hero--services {
+  background-image:
+    linear-gradient(to bottom, rgba(14, 30, 24, 0.65) 0%, rgba(14, 30, 24, 0.44) 60%, rgba(14, 30, 24, 0.72) 100%),
+    url('../images/devices-bg.jpg');
+}
+
+.page-hero--work {
+  background-image:
+    linear-gradient(to bottom, rgba(14, 30, 24, 0.68) 0%, rgba(14, 30, 24, 0.46) 60%, rgba(14, 30, 24, 0.74) 100%),
+    url('../images/clients-bg.jpg');
+}
+
+.page-hero--contact {
+  background-image:
+    linear-gradient(to bottom, rgba(14, 30, 24, 0.7) 0%, rgba(14, 30, 24, 0.5) 60%, rgba(14, 30, 24, 0.76) 100%),
+    url('../images/map-bg.jpg');
+}
+
+@media (min-width: $bp-md) {
+  .page-hero {
+    min-height: 48vh;
+    padding: 120px 0 54px;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .page-hero {
+    min-height: 52vh;
+    padding: 136px 0 64px;
+  }
+
+}
+
+@media (min-width: $bp-xl) {
+  .page-hero {
+    min-height: 56vh;
+    padding: 152px 0 74px;
+  }
+}

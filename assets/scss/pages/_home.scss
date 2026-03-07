@@ -1,0 +1,57 @@
+@use '../abstracts/variables' as *;
+
+// Home page: header starts fully transparent (dark hero fills viewport).
+// The base .header.is-compact handles the frosted white state on scroll.
+// No special overrides needed — the header base styles work for all pages.
+
+// ─── Home featured / highlights grid ─────────────────────────────────────────
+
+.home-featured {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.home-featured__item {
+  position: relative;
+  border: 1px solid #ececec;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.home-featured__item img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.home-featured__item h3 {
+  margin: 14px 14px 8px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.home-featured__item p {
+  margin: 0 14px 16px;
+  color: var(--color-muted);
+}
+
+@media (min-width: $bp-md) {
+  .home-featured {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .home-featured {
+    gap: 22px;
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .home-featured {
+    gap: 24px;
+  }
+}

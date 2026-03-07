@@ -1,0 +1,77 @@
+// Base button — white outline, works on dark backgrounds (heroes)
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #ffffff;
+  color: var(--color-text);
+}
+
+// Solid filled — primary color, works on any background
+.btn--solid {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn--solid:hover,
+.btn--solid:focus-visible {
+  border-color: #33866b;
+  background: #33866b;
+  color: #ffffff;
+}
+
+// Ghost — white background, muted border, for light sections
+.btn--ghost {
+  border-color: var(--color-line);
+  background: #ffffff;
+  color: var(--color-text);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  border-color: var(--color-primary-light);
+  background: var(--color-soft);
+  color: var(--color-text);
+}
+
+// Filter button — used on blog and work pages
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border: 1px solid #d8d8d8;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn:focus-visible {
+  border-color: var(--color-primary-light);
+}
+
+.filter-btn.is-active {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #ffffff;
+}

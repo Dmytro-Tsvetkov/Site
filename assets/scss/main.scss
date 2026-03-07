@@ -1,0 +1,52 @@
+// ============================================================
+// PhotoBlog — main SCSS entry point
+// Compiled by Gulp → assets/css/style.css
+// Architecture:
+//   abstracts  → SCSS variables (breakpoints)
+//   base       → tokens, reset, typography
+//   layout     → container, header, footer
+//   ui         → buttons, forms, social
+//   blocks     → reusable section components
+//   pages      → page-specific layouts and overrides
+//   utilities  → helper classes
+// ============================================================
+
+// Base
+@use 'base/tokens';
+@use 'base/reset';
+@use 'base/typography';
+
+// Layout
+@use 'layout/container';
+@use 'layout/header';
+@use 'layout/footer';
+
+// UI
+@use 'ui/buttons';
+@use 'ui/forms';
+@use 'ui/social';
+
+// Blocks
+@use 'blocks/page-hero';
+@use 'blocks/intro';
+@use 'blocks/cards';
+@use 'blocks/statistics';
+@use 'blocks/services-block';
+@use 'blocks/devices';
+@use 'blocks/works';
+@use 'blocks/reviews';
+@use 'blocks/clients';
+@use 'blocks/logos';
+@use 'blocks/blog-section';
+@use 'blocks/map';
+@use 'blocks/faq';
+
+// Pages
+@use 'pages/home';
+@use 'pages/blog';
+@use 'pages/services';
+@use 'pages/work';
+@use 'pages/contact';
+
+// Utilities
+@use 'utilities/utilities';

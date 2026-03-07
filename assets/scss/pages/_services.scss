@@ -1,0 +1,185 @@
+@use '../abstracts/variables' as *;
+
+// ─── Service card grid ────────────────────────────────────────────────────────
+
+.services-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.service-card {
+  position: relative;
+  background: var(--color-soft);
+  border: 1px solid #e4e4e4;
+  border-left: 4px solid var(--color-primary-light);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 22px 20px;
+  transition: box-shadow 0.22s ease, transform 0.22s ease, border-left-color 0.22s ease;
+}
+
+.service-card:hover,
+.service-card:focus-within {
+  box-shadow: 0 8px 28px rgba(68, 162, 130, 0.14);
+  transform: translateY(-2px);
+  border-left-color: var(--color-primary);
+}
+
+.service-card__title {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.service-card__text {
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+// ─── Process steps ────────────────────────────────────────────────────────────
+
+.process {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.process__item {
+  position: relative;
+  padding: 22px 20px 22px 24px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: var(--radius-md);
+  border-top: 3px solid var(--color-primary-light);
+}
+
+.process__step {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.process__item h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.process__item p {
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+// ─── Pricing grid ─────────────────────────────────────────────────────────────
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.pricing-card {
+  padding: 28px 24px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.pricing-card:hover {
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.pricing-card h3 {
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+}
+
+.pricing-card__value {
+  margin: 10px 0 12px;
+  color: var(--color-primary);
+  font-size: clamp(32px, 7vw, 48px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pricing-card p {
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pricing-card--featured {
+  border-color: var(--color-primary);
+  background: linear-gradient(135deg, #f5fffd 0%, #eafaf5 100%);
+  box-shadow: 0 6px 22px rgba(68, 162, 130, 0.18);
+}
+
+.pricing-card--featured h3 {
+  color: var(--color-primary);
+}
+
+.pricing-card--featured .pricing-card__value {
+  color: #2a7a60;
+}
+
+// ─── CTA section ──────────────────────────────────────────────────────────────
+
+.services-cta {
+  background: linear-gradient(160deg, #f2fdf9 0%, #e4f7ef 100%);
+}
+
+@media (min-width: $bp-md) {
+  .services-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .process {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .faq-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .services-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .service-card,
+  .pricing-card {
+    padding: 26px 24px;
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .services-list {
+    gap: 20px;
+  }
+
+  .pricing-grid {
+    gap: 22px;
+  }
+}

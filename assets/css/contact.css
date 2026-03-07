@@ -1,0 +1,130 @@
+.contact-layout {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+
+.contact-layout--extra {
+  align-items: stretch;
+}
+
+.contact-panel {
+  background: #f8f8f8;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.contact-list {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-list__item {
+  padding: 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.contact-list__label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #44a282;
+}
+
+.contact-form {
+  display: grid;
+  gap: 14px;
+}
+
+.contact-form__row {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.availability-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.availability-item {
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.availability-item h3 {
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.contact-socials {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, #f3f3f3 0%, #e7f4ef 100%);
+}
+
+.faq-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.faq-item h3 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.faq-item p {
+  color: #8f8f8f;
+}
+
+@media (min-width: 768px) {
+  .contact-form__row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .contact-panel {
+    padding: 22px;
+  }
+  .availability-grid,
+  .faq-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .contact-layout--extra {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 24px;
+  }
+  .contact-panel {
+    padding: 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .contact-layout {
+    gap: 28px;
+  }
+}

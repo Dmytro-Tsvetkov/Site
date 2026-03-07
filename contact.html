@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/0828df9c19.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>PhotoBlog Contact</title>
+</head>
+<body>
+<header class="header header--static">
+  <div class="container">
+    <div class="header__inner">
+      <a class="header__logo" href="index.html" aria-label="PhotoBlog home"><img class="header__logo-image" src="assets/images/logo.png" alt="PhotoBlog logo"></a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span></button>
+      <nav class="nav" id="site-nav" data-nav>
+        <a class="nav__link" href="index.html">About</a>
+        <a class="nav__link" href="services.html">Service</a>
+        <a class="nav__link" href="blog.html">Blog</a>
+        <a class="nav__link" href="work.html">Work</a>
+        <a class="nav__link active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero page-hero--contact" data-parallax-bg="0.09">
+  <div class="container">
+    <div class="page-hero__inner">
+      <p class="page-hero__eyebrow" data-anim="fade-in">Let&apos;s Build Together</p>
+      <h1 class="page-hero__title" data-anim="fade-up">Contact</h1>
+      <p class="page-hero__text" data-anim="fade-up">Tell us your timeline, destination, and expected deliverables. We will shape the right production flow.</p>
+      <div class="page-hero__actions" data-anim="fade-up">
+        <a class="btn" href="#contact-form-section">Send request</a>
+        <a class="btn btn--ghost" href="#contact-faq">Read FAQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact-form-section">
+  <div class="container">
+    <div class="section__header" data-anim="fade-up">
+      <h3 class="section__suptitle">Let&apos;s talk</h3>
+      <h2 class="section__title">Start Your Project</h2>
+    </div>
+
+    <div class="contact-layout">
+      <aside class="contact-panel">
+        <h3>Studio details</h3>
+        <div class="contact-list u-mt-lg">
+          <div class="contact-list__item"><span class="contact-list__label">Email</span>hello@photoblog.studio</div>
+          <div class="contact-list__item"><span class="contact-list__label">Phone</span>+1 (202) 555-0182</div>
+          <div class="contact-list__item"><span class="contact-list__label">Location</span>Brooklyn, New York</div>
+          <div class="contact-list__item"><span class="contact-list__label">Response time</span>Usually within one business day</div>
+        </div>
+      </aside>
+
+      <div class="contact-panel">
+        <form class="contact-form" novalidate data-contact-form>
+          <div class="contact-form__row">
+            <div>
+              <label for="contact-name">Name</label>
+              <input class="input" id="contact-name" name="name" type="text" required>
+              <div class="field-error" data-error="contact-name"></div>
+            </div>
+            <div>
+              <label for="contact-email">Email</label>
+              <input class="input" id="contact-email" name="email" type="email" required>
+              <div class="field-error" data-error="contact-email"></div>
+            </div>
+          </div>
+          <div>
+            <label for="contact-topic">Subject</label>
+            <input class="input" id="contact-topic" name="topic" type="text" required>
+            <div class="field-error" data-error="contact-topic"></div>
+          </div>
+          <div>
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="6" required></textarea>
+            <div class="field-error" data-error="contact-message"></div>
+          </div>
+          <button class="btn btn--solid" type="submit" data-anim="fade-up">Send Message</button>
+          <div class="form-message" data-form-message></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container">
+    <div class="section__header" data-anim="fade-up">
+      <h3 class="section__suptitle">Availability</h3>
+      <h2 class="section__title">Working Hours</h2>
+    </div>
+    <div class="availability-grid" data-anim="fade-up">
+      <article class="availability-item"><h3>Mon - Thu</h3><p>09:00 - 18:00</p></article>
+      <article class="availability-item"><h3>Friday</h3><p>09:00 - 16:00</p></article>
+      <article class="availability-item"><h3>Weekend</h3><p>Field shoots by schedule</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-layout contact-layout--extra" data-anim="fade-up">
+      <article class="contact-panel">
+        <h3>Social links</h3>
+        <div class="contact-socials">
+          <a href="#" class="btn btn--ghost">Instagram</a>
+          <a href="#" class="btn btn--ghost">Behance</a>
+          <a href="#" class="btn btn--ghost">Pinterest</a>
+        </div>
+      </article>
+      <article class="contact-panel map-placeholder">
+        <h3>Map</h3>
+        <p>Studio location map placeholder. Exact address is shared after booking confirmation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey" id="contact-faq">
+  <div class="container">
+    <div class="section__header" data-anim="fade-up">
+      <h3 class="section__suptitle">FAQ</h3>
+      <h2 class="section__title">Quick Answers</h2>
+    </div>
+    <div class="faq-list" data-anim="fade-up">
+      <article class="faq-item"><h3>Do you work remotely?</h3><p>Yes. We can plan, review, and deliver all post-production remotely.</p></article>
+      <article class="faq-item"><h3>Can I book one small session?</h3><p>Yes, starter sessions are available for single stories and test shoots.</p></article>
+      <article class="faq-item"><h3>Do you provide raw files?</h3><p>On request. Most projects include curated finals by default.</p></article>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__col footer__col--first">
+        <div class="footer__logo"><a class="footer__name" href="index.html">PhotoBlog</a></div>
+        <div class="footer__text">PhotoBlog is a visual journal focused on travel, street, and environmental photography. We publish image-first stories with concise writing and practical shooting notes.</div>
+        <div class="footer__social">
+          <div class="footer__social-header"><b>22k</b> followers</div>
+          <div class="footer__social-content">
+            Follow Us:
+            <a href="#" target="_blank" rel="noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank" rel="noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" rel="noreferrer"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <form class="subscribe" action="#" method="post">
+          <input class="subscribe__input" type="email" name="email" placeholder="Your Email..." aria-label="Email address">
+          <button class="subscribe__btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer__col footer__col--second">
+        <div class="footer__title">Blogs</div>
+        <div class="blogs">
+          <div class="blogs__item"><img class="blogs__img" src="assets/images/blog/1.png" alt="Blog preview"><div class="blogs__content"><a class="blogs__title" href="blog.html">How to plan a sunrise field shoot</a><div class="blogs__date">Jan 27, 2026</div></div></div>
+          <div class="blogs__item"><img class="blogs__img" src="assets/images/blog/2.png" alt="Blog preview"><div class="blogs__content"><a class="blogs__title" href="blog.html">Travel portraits without staged poses</a><div class="blogs__date">Jan 18, 2026</div></div></div>
+          <div class="blogs__item"><img class="blogs__img" src="assets/images/blog/3.png" alt="Blog preview"><div class="blogs__content"><a class="blogs__title" href="blog.html">Editing a moody urban series</a><div class="blogs__date">Jan 4, 2026</div></div></div>
+        </div>
+      </div>
+      <div class="footer__col footer__col--third">
+        <div class="footer__title">Instagram</div>
+        <div class="instagram">
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/1.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/2.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/3.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/4.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/5.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/6.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/7.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/8.jpg" alt="Instagram shot"></a>
+          <a class="instagram__item" href="#" target="_blank" rel="noreferrer"><img src="assets/images/instagram/9.jpg" alt="Instagram shot"></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">@ 2026 PhotoBlog <span>service for your photos</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+</html>

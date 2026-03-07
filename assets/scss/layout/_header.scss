@@ -1,0 +1,302 @@
+@use '../abstracts/variables' as *;
+
+// ─── Base Header ──────────────────────────────────────────────────────────────
+// Fixed on every page. Starts transparent (works over all dark heroes).
+// Becomes white frosted glass when user scrolls (.is-compact added by JS).
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+// header--static is now just a marker class — no position override
+.header--static {
+  background: rgba(14, 34, 26, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+// Scrolled state: elegant white frosted glass
+.header.is-compact {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 14px;
+}
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.header__logo-image {
+  width: clamp(128px, 32vw, 172px);
+  height: auto;
+  display: block;
+}
+
+// ─── Mobile Hamburger ─────────────────────────────────────────────────────────
+
+.nav-toggle {
+  position: relative;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 2px;
+}
+
+.nav-toggle__line {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: #ffffff;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+}
+
+// Hamburger adapts to white header when scrolled
+.header.is-compact .nav-toggle {
+  border-color: rgba(0, 0, 0, 0.14);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.header.is-compact .nav-toggle:hover,
+.header.is-compact .nav-toggle:focus-visible {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.22);
+}
+
+.header.is-compact .nav-toggle__line {
+  background: var(--color-text);
+}
+
+.nav-toggle.is-active .nav-toggle__line:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav-toggle.is-active .nav-toggle__line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-toggle.is-active .nav-toggle__line:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+// ─── Navigation — Mobile: slide-down panel ────────────────────────────────────
+
+.nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px 16px;
+  background: rgba(12, 30, 22, 0.97);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s ease;
+}
+
+.nav.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav__link {
+  display: block;
+  padding: 11px 12px;
+  color: rgba(255, 255, 255, 0.84);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: background 0.16s ease, color 0.16s ease;
+}
+
+.nav__link:hover,
+.nav__link:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.nav__link.active {
+  color: var(--color-primary-light);
+  background: rgba(149, 225, 211, 0.1);
+}
+
+// ─── Desktop navigation ───────────────────────────────────────────────────────
+
+@media (min-width: $bp-md) {
+  .header__inner {
+    height: 70px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  // Desktop nav links — white on transparent/dark header
+  .nav__link {
+    position: relative;
+    padding: 7px 11px;
+    font-size: 13px;
+    letter-spacing: 0.07em;
+    border-radius: 6px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    left: 11px;
+    right: 11px;
+    bottom: 3px;
+    height: 1.5px;
+    background: var(--color-primary-light);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+  }
+
+  .nav__link:hover,
+  .nav__link:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+
+  .nav__link.active {
+    background: rgba(149, 225, 211, 0.14);
+    color: #ffffff;
+  }
+
+  .nav__link:hover::after,
+  .nav__link.active::after {
+    transform: scaleX(1);
+  }
+
+  // When header is scrolled (white bg) — switch links to dark
+  .header.is-compact .nav__link {
+    color: var(--color-text);
+  }
+
+  .header.is-compact .nav__link::after {
+    background: var(--color-primary);
+  }
+
+  .header.is-compact .nav__link:hover,
+  .header.is-compact .nav__link:focus-visible {
+    background: var(--color-soft);
+    color: var(--color-primary);
+  }
+
+  .header.is-compact .nav__link.active {
+    background: rgba(68, 162, 130, 0.1);
+    color: var(--color-primary);
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .header__inner {
+    height: 76px;
+  }
+
+  .header__logo-image {
+    width: 186px;
+  }
+
+  .nav {
+    gap: 4px;
+  }
+
+  .nav__link {
+    font-size: 13px;
+    padding: 7px 13px;
+  }
+
+  .nav__link::after {
+    left: 13px;
+    right: 13px;
+  }
+}
+
+@media (min-width: $bp-xl) {
+  .header__logo-image {
+    width: 200px;
+  }
+
+  .nav {
+    gap: 6px;
+  }
+}

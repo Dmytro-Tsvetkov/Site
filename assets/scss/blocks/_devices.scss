@@ -1,0 +1,46 @@
+@use '../abstracts/variables' as *;
+
+.section--devices {
+  margin-bottom: 32px;
+  padding-bottom: 0;
+  background: url('../images/devices-bg.jpg') center / cover no-repeat;
+}
+
+.devices {
+  width: 100%;
+  max-width: clamp(300px, 70vw, 620px);
+  margin: 0 auto;
+  position: relative;
+}
+
+.devices__item {
+  width: 100%;
+  display: block;
+}
+
+.devices__item--iphone {
+  width: 45%;
+  position: absolute;
+  right: -8px;
+  bottom: -36px;
+}
+
+@media (min-width: $bp-md) {
+  .devices {
+    max-width: clamp(460px, 68vw, 620px);
+  }
+
+  .devices__item--iphone {
+    width: 38%;
+    right: -8px;
+    bottom: -48px;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .devices__item--iphone {
+    width: 34%;
+    right: -10px;
+    bottom: -74px;
+  }
+}

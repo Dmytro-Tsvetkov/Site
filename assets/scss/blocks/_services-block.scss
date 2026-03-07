@@ -1,0 +1,54 @@
+@use '../abstracts/variables' as *;
+
+// Icon-based service items on the home page
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.services__item {
+  flex: 1 1 100%;
+  padding-left: 64px;
+  position: relative;
+}
+
+.services__icon {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  width: 34px;
+}
+
+.services__title {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.services__text {
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+@media (min-width: $bp-md) {
+  .services__item {
+    flex: 1 1 calc(50% - 9px);
+  }
+}
+
+@media (min-width: $bp-lg) {
+  .services {
+    gap: 20px;
+  }
+
+  .services__item {
+    flex: 1 1 0;
+    padding-left: 76px;
+  }
+
+  .services__icon {
+    left: 20px;
+    width: 40px;
+  }
+}
