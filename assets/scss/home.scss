@@ -14,7 +14,6 @@
 @use 'ui/social';
 
 // Blocks
-@use 'blocks/page-hero';
 @use 'blocks/intro';
 @use 'blocks/cards';
 @use 'blocks/statistics';
@@ -26,16 +25,9 @@
 @use 'blocks/logos';
 @use 'blocks/blog-section';
 @use 'blocks/map';
-@use 'blocks/faq';
 
 // Pages
 @use 'pages/home';
-@use 'pages/blog';
-@use 'pages/blog-post';
-@use 'pages/services';
-@use 'pages/work';
-@use 'pages/work-case';
-@use 'pages/contact';
 
 // Utilities
 @use 'utilities/utilities';

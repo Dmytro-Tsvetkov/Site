@@ -7,11 +7,10 @@ const postcss   = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const { Transform } = require('stream');
 
-const SCSS_SRC  = 'assets/scss/main.scss';
+const SCSS_SRC  = 'assets/scss/*.scss';
 const CSS_DEST  = 'assets/css';
 const WATCH_SRC = 'assets/scss/**/*.scss';
 
-// Compile SCSS using the modern Dart Sass API (no legacy warnings)
 function compileSass(compressed) {
   return new Transform({
     objectMode: true,
@@ -23,8 +22,7 @@ function compileSass(compressed) {
           sourceMap: !compressed,
         });
         file.contents = Buffer.from(result.css);
-        // Force output filename to style.css regardless of entry point name
-        file.path = path.join(path.dirname(file.path), 'style.css');
+        file.path = path.join(path.dirname(file.path), path.basename(file.path, '.scss') + '.css');
         callback(null, file);
       } catch (err) {
         callback(err);
