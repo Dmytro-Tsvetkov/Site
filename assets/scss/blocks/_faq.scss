@@ -1,6 +1,5 @@
 @use '../abstracts/variables' as *;
 
-// Shared FAQ component (used on services + contact pages)
 .faq-list {
   display: grid;
   grid-template-columns: 1fr;

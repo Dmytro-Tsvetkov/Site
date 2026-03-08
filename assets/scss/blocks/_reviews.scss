@@ -38,7 +38,8 @@
   color: var(--color-text);
 }
 
-// Swiper overrides — navigation arrows
+// ─── Swiper Navigation Arrows ─────────────────────────────────────────────────
+
 .reviews .swiper-button-prev,
 .reviews .swiper-button-next {
   color: var(--color-primary);
@@ -51,7 +52,8 @@
   font-size: 18px;
 }
 
-// Swiper overrides — pagination dots
+// ─── Swiper Pagination Dots ───────────────────────────────────────────────────
+
 .reviews .swiper-pagination {
   bottom: 6px;
 }

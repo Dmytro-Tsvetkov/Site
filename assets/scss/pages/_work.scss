@@ -31,11 +31,60 @@
 
 // ─── Work filter toolbar ──────────────────────────────────────────────────────
 
+.work-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
 .work-filter {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
+  flex: 1 1 auto;
+}
+
+.work-search-wrap {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.work-search {
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: var(--font-base);
+  font-size: 13px;
+  color: var(--color-text);
+  background: #ffffff;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-search::placeholder {
+  color: var(--color-muted);
+}
+
+.work-search:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(68, 162, 130, 0.12);
+}
+
+// ─── Empty state ──────────────────────────────────────────────────────────────
+
+.work-empty {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--color-muted);
+  font-size: 15px;
+}
+
+.work-empty.is-hidden {
+  display: none;
 }
 
 // ─── Work photo grid ──────────────────────────────────────────────────────────
@@ -181,6 +230,15 @@
 }
 
 @media (min-width: $bp-md) {
+  .work-tools {
+    flex-wrap: nowrap;
+  }
+
+  .work-search-wrap {
+    flex: 0 0 220px;
+    width: auto;
+  }
+
   .featured-case {
     grid-template-columns: 1.15fr 1fr;
     gap: 28px;
@@ -228,4 +286,12 @@
   .work-grid {
     gap: 20px;
   }
+}
+
+// ─── Work card — stretched link (full card clickable) ─────────────────────────
+
+.work-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }

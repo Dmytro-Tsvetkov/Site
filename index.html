@@ -17,7 +17,7 @@
   <div class="container">
     <div class="header__inner">
       <a class="header__logo" href="index.html" aria-label="PhotoBlog home">
-        <img class="header__logo-image" src="assets/images/logo.png" alt="PhotoBlog">
+        <span class="header__logo-text"><span class="header__logo-text--main">Photo</span><span class="header__logo-text--accent">Blog</span></span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
         <span class="nav-toggle__line"></span>
@@ -63,20 +63,20 @@
 
     <div class="card card--one card-categories">
       <div class="card__item">
-        <div class="card__inner">
+        <a class="card__inner" href="blog.html">
           <div class="card__img">
             <img src="assets/images/about/1.png" alt="Nature photography project">
           </div>
-          <a class="card__text" href="#">Nature</a>
-        </div>
+          <span class="card__text">Nature</span>
+        </a>
       </div>
       <div class="card__item">
-        <div class="card__inner">
+        <a class="card__inner" href="work.html">
           <div class="card__img">
             <img src="assets/images/about/2.png" alt="Travel photography project">
           </div>
-          <a class="card__text" href="#">Travel</a>
-        </div>
+          <span class="card__text">Travel</span>
+        </a>
       </div>
     </div>
 
@@ -162,14 +162,46 @@
 <section class="section section--devices">
   <div class="container">
 
-    <div class="section__header">
-      <h3 class="section__suptitle">For all devices</h3>
-      <h2 class="section__title">Unique Design</h2>
+    <div class="section__header" data-anim="fade-up">
+      <h3 class="section__suptitle">Behind the lens</h3>
+      <h2 class="section__title">Visual Stories</h2>
+      <div class="section__text">
+        <p>A curated selection of moments captured across travel, nature, and coastal productions.</p>
+      </div>
     </div>
 
-    <div class="devices">
-      <img class="devices__item" src="assets/images/ipad.png" alt="iPad view">
-      <img class="devices__item devices__item--iphone" src="assets/images/iphone.png" alt="iPhone view">
+    <div class="story-strip" data-anim="fade-up">
+      <article class="story-strip__item">
+        <a class="story-strip__link" href="work.html">
+          <img src="assets/images/strip-1.jpg" alt="Mountain Morning">
+          <div class="story-strip__overlay">
+            <span class="story-strip__tag">Travel</span>
+            <h3 class="story-strip__title">Mountain Morning</h3>
+          </div>
+        </a>
+      </article>
+      <article class="story-strip__item">
+        <a class="story-strip__link" href="work.html">
+          <img src="assets/images/strip-2.jpg" alt="Into the Forest">
+          <div class="story-strip__overlay">
+            <span class="story-strip__tag">Nature</span>
+            <h3 class="story-strip__title">Into the Forest</h3>
+          </div>
+        </a>
+      </article>
+      <article class="story-strip__item">
+        <a class="story-strip__link" href="work.html">
+          <img src="assets/images/strip-3.jpg" alt="Coastal Light">
+          <div class="story-strip__overlay">
+            <span class="story-strip__tag">Travel</span>
+            <h3 class="story-strip__title">Coastal Light</h3>
+          </div>
+        </a>
+      </article>
+    </div>
+
+    <div class="u-text-center story-strip__cta" data-anim="fade-up">
+      <a class="btn btn--ghost" href="work.html">Explore all work</a>
     </div>
 
   </div>

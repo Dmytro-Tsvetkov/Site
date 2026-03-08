@@ -1,6 +1,5 @@
 @use '../abstracts/variables' as *;
 
-// Shared hero for all inner pages (blog, services, work, contact)
 .page-hero {
   min-height: 44vh;
   display: flex;
@@ -59,29 +58,28 @@
   margin-top: 22px;
 }
 
-// Page-specific hero backgrounds
 .page-hero--blog {
   background-image:
-    linear-gradient(to bottom, rgba(14, 30, 24, 0.7) 0%, rgba(14, 30, 24, 0.48) 60%, rgba(14, 30, 24, 0.78) 100%),
-    url('../images/works/7.jpg');
+    linear-gradient(to bottom, rgba(14, 30, 24, 0.66) 0%, rgba(14, 30, 24, 0.44) 60%, rgba(14, 30, 24, 0.74) 100%),
+    url('../images/hero-blog.jpg');
 }
 
 .page-hero--services {
   background-image:
-    linear-gradient(to bottom, rgba(14, 30, 24, 0.65) 0%, rgba(14, 30, 24, 0.44) 60%, rgba(14, 30, 24, 0.72) 100%),
-    url('../images/devices-bg.jpg');
+    linear-gradient(to bottom, rgba(14, 30, 24, 0.6) 0%, rgba(14, 30, 24, 0.4) 60%, rgba(14, 30, 24, 0.7) 100%),
+    url('../images/hero-services.jpg');
 }
 
 .page-hero--work {
   background-image:
-    linear-gradient(to bottom, rgba(14, 30, 24, 0.68) 0%, rgba(14, 30, 24, 0.46) 60%, rgba(14, 30, 24, 0.74) 100%),
-    url('../images/clients-bg.jpg');
+    linear-gradient(to bottom, rgba(14, 30, 24, 0.72) 0%, rgba(14, 30, 24, 0.5) 60%, rgba(14, 30, 24, 0.78) 100%),
+    url('../images/hero-work.jpg');
 }
 
 .page-hero--contact {
   background-image:
-    linear-gradient(to bottom, rgba(14, 30, 24, 0.7) 0%, rgba(14, 30, 24, 0.5) 60%, rgba(14, 30, 24, 0.76) 100%),
-    url('../images/map-bg.jpg');
+    linear-gradient(to bottom, rgba(14, 30, 24, 0.62) 0%, rgba(14, 30, 24, 0.42) 60%, rgba(14, 30, 24, 0.72) 100%),
+    url('../images/hero-contact.jpg');
 }
 
 @media (min-width: $bp-md) {

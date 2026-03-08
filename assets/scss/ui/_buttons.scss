@@ -1,4 +1,5 @@
-// Base button — white outline, works on dark backgrounds (heroes)
+// ─── Base Button ──────────────────────────────────────────────────────────────
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -23,7 +24,8 @@
   color: var(--color-text);
 }
 
-// Solid filled — primary color, works on any background
+// ─── Solid ────────────────────────────────────────────────────────────────────
+
 .btn--solid {
   border-color: var(--color-primary);
   background: var(--color-primary);
@@ -37,7 +39,8 @@
   color: #ffffff;
 }
 
-// Ghost — white background, muted border, for light sections
+// ─── Ghost ────────────────────────────────────────────────────────────────────
+
 .btn--ghost {
   border-color: var(--color-line);
   background: #ffffff;
@@ -51,7 +54,8 @@
   color: var(--color-text);
 }
 
-// Filter button — used on blog and work pages
+// ─── Filter Button ────────────────────────────────────────────────────────────
+
 .filter-btn {
   display: inline-flex;
   align-items: center;

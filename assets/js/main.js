@@ -105,9 +105,6 @@
       return;
     }
 
-    // CSS transitions handle the animation — no GSAP inline styles
-    // that would override desktop media-query visibility rules.
-
     const closeNav = () => {
       nav.classList.remove('is-open');
       toggle.classList.remove('is-active');
@@ -397,7 +394,6 @@
     const gs = window.gsap;
     const once = { toggleActions: 'play none none none', once: true };
 
-    // ── Section headers: children stagger in ───────────────────────────────
     selectAll('.section__header').forEach((header) => {
       const children = Array.from(header.children);
       if (!children.length) return;
@@ -414,7 +410,6 @@
       });
     });
 
-    // ── Card & grid auto-stagger ────────────────────────────────────────────
     const grids = [
       { parent: '.card',              child: '.card__item',        stagger: 0.1,  y: 40 },
       { parent: '.services-list',     child: '.service-card',      stagger: 0.08, y: 32 },
@@ -452,7 +447,6 @@
       });
     });
 
-    // ── Footer columns ──────────────────────────────────────────────────────
     const footerCols = selectAll('.footer__col');
     if (footerCols.length) {
       gs.from(footerCols, {
@@ -466,7 +460,6 @@
       });
     }
 
-    // ── Featured case: image slide in from left ─────────────────────────────
     const featuredImg = select('.featured-case__image');
     if (featuredImg) {
       gs.from(featuredImg, {
@@ -480,7 +473,6 @@
       });
     }
 
-    // ── Contact panel: fade left/right ──────────────────────────────────────
     const contactPanels = selectAll('.contact-panel');
     contactPanels.forEach((panel, i) => {
       gs.from(panel, {
@@ -501,9 +493,7 @@
 
     const gs = window.gsap;
 
-    // Only scrub images that are inside overflow:hidden containers with
-    // enough extra height (set via CSS height:116%) so no gaps appear.
-    // DO NOT scrub block-level text/layout elements — causes content shift.
+    // Only scrub images inside overflow:hidden containers; scrubbing layout elements causes content shift.
 
     const scrub = (img, trigger, amount = 5, speed = 1) => {
       gs.fromTo(img,
@@ -514,17 +504,14 @@
       );
     };
 
-    // ── Works images (each col has overflow:hidden) ───────────────────────
     selectAll('.works__image').forEach((img) => {
       scrub(img, img.closest('.works__item') || img.parentElement, 4, 0.9);
     });
 
-    // ── Home blog photos (inside overflow:hidden .blog__header) ──────────
     selectAll('.blog__photo').forEach((img) => {
       scrub(img, img.closest('.blog__item') || img.parentElement, 5, 1.1);
     });
 
-    // ── Featured case image (standalone, no tight container) ─────────────
     const featuredCase = select('.featured-case__image');
     if (featuredCase) {
       scrub(featuredCase, featuredCase.closest('.featured-case') || featuredCase, 6, 1.2);

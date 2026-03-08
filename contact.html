@@ -14,7 +14,7 @@
 <header class="header header--static">
   <div class="container">
     <div class="header__inner">
-      <a class="header__logo" href="index.html" aria-label="PhotoBlog home"><img class="header__logo-image" src="assets/images/logo.png" alt="PhotoBlog logo"></a>
+      <a class="header__logo" href="index.html" aria-label="PhotoBlog home"><span class="header__logo-text"><span class="header__logo-text--main">Photo</span><span class="header__logo-text--accent">Blog</span></span></a>
       <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span></button>
       <nav class="nav" id="site-nav" data-nav>
         <a class="nav__link" href="index.html">About</a>
@@ -110,18 +110,57 @@
 <section class="section">
   <div class="container">
     <div class="contact-layout contact-layout--extra" data-anim="fade-up">
+
       <article class="contact-panel">
-        <h3>Social links</h3>
-        <div class="contact-socials">
-          <a href="#" class="btn btn--ghost">Instagram</a>
-          <a href="#" class="btn btn--ghost">Behance</a>
-          <a href="#" class="btn btn--ghost">Pinterest</a>
+        <h3>Stay Connected</h3>
+        <div class="contact-socials-list">
+          <a class="contact-social-link" href="#" target="_blank" rel="noreferrer">
+            <span class="contact-social-link__icon"><i class="fab fa-instagram"></i></span>
+            <div class="contact-social-link__info">
+              <div class="contact-social-link__name">Instagram</div>
+              <div class="contact-social-link__handle">@photoblog.studio</div>
+            </div>
+            <span class="contact-social-link__count">22k</span>
+          </a>
+          <a class="contact-social-link" href="#" target="_blank" rel="noreferrer">
+            <span class="contact-social-link__icon"><i class="fab fa-behance"></i></span>
+            <div class="contact-social-link__info">
+              <div class="contact-social-link__name">Behance</div>
+              <div class="contact-social-link__handle">photoblog.studio</div>
+            </div>
+            <span class="contact-social-link__count">8.4k</span>
+          </a>
+          <a class="contact-social-link" href="#" target="_blank" rel="noreferrer">
+            <span class="contact-social-link__icon"><i class="fab fa-pinterest-p"></i></span>
+            <div class="contact-social-link__info">
+              <div class="contact-social-link__name">Pinterest</div>
+              <div class="contact-social-link__handle">photoblog.studio</div>
+            </div>
+            <span class="contact-social-link__count">14k</span>
+          </a>
+          <a class="contact-social-link" href="#" target="_blank" rel="noreferrer">
+            <span class="contact-social-link__icon"><i class="fab fa-facebook-f"></i></span>
+            <div class="contact-social-link__info">
+              <div class="contact-social-link__name">Facebook</div>
+              <div class="contact-social-link__handle">PhotoBlog Studio</div>
+            </div>
+            <span class="contact-social-link__count">11k</span>
+          </a>
         </div>
       </article>
-      <article class="contact-panel map-placeholder">
-        <h3>Map</h3>
-        <p>Studio location map placeholder. Exact address is shared after booking confirmation.</p>
+
+      <article class="contact-location-panel">
+        <div class="contact-location-panel__bg">
+          <img src="assets/images/works/3.jpg" alt="Studio neighbourhood">
+        </div>
+        <div class="contact-location-panel__body">
+          <div class="contact-location-panel__icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-location-panel__city">Brooklyn, New York</div>
+          <div class="contact-location-panel__street">274 Flushing Ave, Studio 3B</div>
+          <a class="btn contact-location-panel__btn" href="#" target="_blank" rel="noreferrer">Get directions</a>
+        </div>
       </article>
+
     </div>
   </div>
 </section>

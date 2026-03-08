@@ -95,10 +95,6 @@
         prevEl: root.querySelector('.swiper-button-prev'),
         nextEl: root.querySelector('.swiper-button-next'),
       },
-      pagination: {
-        el: root.querySelector('.swiper-pagination'),
-        clickable: true,
-      },
       a11y: {
         prevSlideMessage: 'Previous review',
         nextSlideMessage: 'Next review',

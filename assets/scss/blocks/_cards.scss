@@ -1,6 +1,5 @@
 @use '../abstracts/variables' as *;
 
-// Project / team card grid
 .card {
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +19,6 @@
   // No background — image fills the box completely
 }
 
-// Dark overlay fades in on hover for text contrast
 .card__inner::after {
   content: '';
   position: absolute;
@@ -121,4 +119,24 @@
   .card__item {
     flex: 1 1 0;
   }
+}
+
+// ─── Category card variant (card--one card-categories) ───────────────────────
+
+a.card__inner {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-categories {
+  justify-content: center;
+}
+
+.card-categories .card__item {
+  max-width: 380px;
+}
+
+.card-categories .card__img {
+  aspect-ratio: 380 / 250;
 }

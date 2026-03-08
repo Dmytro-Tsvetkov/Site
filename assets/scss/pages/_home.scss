@@ -1,9 +1,5 @@
 @use '../abstracts/variables' as *;
 
-// Home page: header starts fully transparent (dark hero fills viewport).
-// The base .header.is-compact handles the frosted white state on scroll.
-// No special overrides needed — the header base styles work for all pages.
-
 // ─── Home featured / highlights grid ─────────────────────────────────────────
 
 .home-featured {

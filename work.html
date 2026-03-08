@@ -14,7 +14,7 @@
 <header class="header header--static">
   <div class="container">
     <div class="header__inner">
-      <a class="header__logo" href="index.html" aria-label="PhotoBlog home"><img class="header__logo-image" src="assets/images/logo.png" alt="PhotoBlog logo"></a>
+      <a class="header__logo" href="index.html" aria-label="PhotoBlog home"><span class="header__logo-text"><span class="header__logo-text--main">Photo</span><span class="header__logo-text--accent">Blog</span></span></a>
       <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span></button>
       <nav class="nav" id="site-nav" data-nav>
         <a class="nav__link" href="index.html">About</a>
@@ -51,7 +51,7 @@
         <h3 class="section__suptitle">Featured case</h3>
         <h2 class="section__title">Northern Coast Photo Essay</h2>
         <p class="section__text">A 3-day production with mixed weather conditions, resulting in a 42-image narrative for a travel publication and social short-form campaign.</p>
-        <a class="btn btn--solid" data-anim="fade-up" href="contact.html">Request similar project</a>
+        <a class="btn btn--solid" data-anim="fade-up" href="work-case.html">View case study</a>
       </div>
     </article>
   </div>
@@ -64,25 +64,31 @@
       <h2 class="section__title">Recent Projects</h2>
     </div>
 
-    <div class="work-filter">
-      <button class="filter-btn is-active" type="button" data-work-filter="all">All</button>
-      <button class="filter-btn" type="button" data-work-filter="travel">Travel</button>
-      <button class="filter-btn" type="button" data-work-filter="street">Street</button>
-      <button class="filter-btn" type="button" data-work-filter="portrait">Portrait</button>
+    <div class="work-tools">
+      <div class="work-filter">
+        <button class="filter-btn is-active" type="button" data-work-filter="all">All</button>
+        <button class="filter-btn" type="button" data-work-filter="travel">Travel</button>
+        <button class="filter-btn" type="button" data-work-filter="street">Street</button>
+        <button class="filter-btn" type="button" data-work-filter="portrait">Portrait</button>
+      </div>
+      <div class="work-search-wrap">
+        <input class="work-search" type="search" placeholder="Search projects…" aria-label="Search projects" data-work-search>
+      </div>
     </div>
 
     <div class="work-grid" data-anim="fade-up">
-      <article class="work-card" data-work-card data-category="travel"><img src="assets/images/works/1.jpg" alt="Mountain morning"><div class="work-card__info"><h3 class="work-card__title">Mountain Morning</h3><p class="work-card__category">Travel</p></div></article>
-      <article class="work-card" data-work-card data-category="travel"><img src="assets/images/works/2.jpg" alt="Roadside frame"><div class="work-card__info"><h3 class="work-card__title">Roadside Frame</h3><p class="work-card__category">Travel</p></div></article>
-      <article class="work-card" data-work-card data-category="street"><img src="assets/images/works/3.jpg" alt="Urban evening"><div class="work-card__info"><h3 class="work-card__title">Urban Evening</h3><p class="work-card__category">Street</p></div></article>
-      <article class="work-card" data-work-card data-category="travel"><img src="assets/images/works/4.jpg" alt="Coastline portrait"><div class="work-card__info"><h3 class="work-card__title">Coastline Portrait</h3><p class="work-card__category">Travel</p></div></article>
-      <article class="work-card" data-work-card data-category="travel"><img src="assets/images/works/5.jpg" alt="Hillside light"><div class="work-card__info"><h3 class="work-card__title">Hillside Light</h3><p class="work-card__category">Travel</p></div></article>
-      <article class="work-card" data-work-card data-category="street"><img src="assets/images/works/6.jpg" alt="Street detail"><div class="work-card__info"><h3 class="work-card__title">Street Detail</h3><p class="work-card__category">Street</p></div></article>
-      <article class="work-card" data-work-card data-category="street"><img src="assets/images/works/7.jpg" alt="Night motion"><div class="work-card__info"><h3 class="work-card__title">Night Motion</h3><p class="work-card__category">Street</p></div></article>
-      <article class="work-card" data-work-card data-category="portrait"><img src="assets/images/team/1.png" alt="Outdoor portrait"><div class="work-card__info"><h3 class="work-card__title">Outdoor Portrait</h3><p class="work-card__category">Portrait</p></div></article>
-      <article class="work-card" data-work-card data-category="portrait"><img src="assets/images/team/2.png" alt="Editorial portrait"><div class="work-card__info"><h3 class="work-card__title">Editorial Portrait</h3><p class="work-card__category">Portrait</p></div></article>
-      <article class="work-card" data-work-card data-category="portrait"><img src="assets/images/team/3.png" alt="Studio portrait"><div class="work-card__info"><h3 class="work-card__title">Studio Portrait</h3><p class="work-card__category">Portrait</p></div></article>
+      <article class="work-card" data-work-card data-category="travel" data-title="Mountain Morning"><img src="assets/images/works/1.jpg" alt="Mountain morning"><div class="work-card__info"><h3 class="work-card__title">Mountain Morning</h3><p class="work-card__category">Travel</p></div><a class="work-card__link" href="work-case.html" aria-label="View Mountain Morning project"></a></article>
+      <article class="work-card" data-work-card data-category="travel" data-title="Roadside Frame"><img src="assets/images/works/2.jpg" alt="Roadside frame"><div class="work-card__info"><h3 class="work-card__title">Roadside Frame</h3><p class="work-card__category">Travel</p></div><a class="work-card__link" href="work-case.html" aria-label="View Roadside Frame project"></a></article>
+      <article class="work-card" data-work-card data-category="street" data-title="Urban Evening"><img src="assets/images/works/3.jpg" alt="Urban evening"><div class="work-card__info"><h3 class="work-card__title">Urban Evening</h3><p class="work-card__category">Street</p></div><a class="work-card__link" href="work-case.html" aria-label="View Urban Evening project"></a></article>
+      <article class="work-card" data-work-card data-category="travel" data-title="Coastline Portrait"><img src="assets/images/works/4.jpg" alt="Coastline portrait"><div class="work-card__info"><h3 class="work-card__title">Coastline Portrait</h3><p class="work-card__category">Travel</p></div><a class="work-card__link" href="work-case.html" aria-label="View Coastline Portrait project"></a></article>
+      <article class="work-card" data-work-card data-category="travel" data-title="Hillside Light"><img src="assets/images/works/5.jpg" alt="Hillside light"><div class="work-card__info"><h3 class="work-card__title">Hillside Light</h3><p class="work-card__category">Travel</p></div><a class="work-card__link" href="work-case.html" aria-label="View Hillside Light project"></a></article>
+      <article class="work-card" data-work-card data-category="street" data-title="Street Detail"><img src="assets/images/works/6.jpg" alt="Street detail"><div class="work-card__info"><h3 class="work-card__title">Street Detail</h3><p class="work-card__category">Street</p></div><a class="work-card__link" href="work-case.html" aria-label="View Street Detail project"></a></article>
+      <article class="work-card" data-work-card data-category="street" data-title="Night Motion"><img src="assets/images/works/7.jpg" alt="Night motion"><div class="work-card__info"><h3 class="work-card__title">Night Motion</h3><p class="work-card__category">Street</p></div><a class="work-card__link" href="work-case.html" aria-label="View Night Motion project"></a></article>
+      <article class="work-card" data-work-card data-category="portrait" data-title="Outdoor Portrait"><img src="assets/images/team/1.png" alt="Outdoor portrait"><div class="work-card__info"><h3 class="work-card__title">Outdoor Portrait</h3><p class="work-card__category">Portrait</p></div><a class="work-card__link" href="work-case.html" aria-label="View Outdoor Portrait project"></a></article>
+      <article class="work-card" data-work-card data-category="portrait" data-title="Editorial Portrait"><img src="assets/images/team/2.png" alt="Editorial portrait"><div class="work-card__info"><h3 class="work-card__title">Editorial Portrait</h3><p class="work-card__category">Portrait</p></div><a class="work-card__link" href="work-case.html" aria-label="View Editorial Portrait project"></a></article>
+      <article class="work-card" data-work-card data-category="portrait" data-title="Studio Portrait"><img src="assets/images/team/3.png" alt="Studio portrait"><div class="work-card__info"><h3 class="work-card__title">Studio Portrait</h3><p class="work-card__category">Portrait</p></div><a class="work-card__link" href="work-case.html" aria-label="View Studio Portrait project"></a></article>
     </div>
+    <p class="work-empty is-hidden" data-work-empty>No projects found. Try a different search or filter.</p>
   </div>
 </section>
 

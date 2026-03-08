@@ -1,8 +1,6 @@
 @use '../abstracts/variables' as *;
 
 // ─── Base Header ──────────────────────────────────────────────────────────────
-// Fixed on every page. Starts transparent (works over all dark heroes).
-// Becomes white frosted glass when user scrolls (.is-compact added by JS).
 
 .header {
   position: fixed;
@@ -14,7 +12,6 @@
   transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
-// header--static is now just a marker class — no position override
 .header--static {
   background: rgba(14, 34, 26, 0.72);
   backdrop-filter: blur(16px);
@@ -22,7 +19,6 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-// Scrolled state: elegant white frosted glass
 .header.is-compact {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(22px);
@@ -47,10 +43,38 @@
   z-index: 2;
 }
 
-.header__logo-image {
-  width: clamp(128px, 32vw, 172px);
-  height: auto;
-  display: block;
+// ─── Text Logo ────────────────────────────────────────────────────────────────
+
+.header__logo-text {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  user-select: none;
+}
+
+.header__logo-text--main {
+  font-family: var(--font-base);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: color 0.32s ease;
+}
+
+.header__logo-text--accent {
+  font-family: var(--font-accent);
+  font-size: 28px;
+  color: var(--color-primary-light);
+  transition: color 0.32s ease;
+}
+
+.header.is-compact .header__logo-text--main {
+  color: var(--color-text);
+}
+
+.header.is-compact .header__logo-text--accent {
+  color: var(--color-primary);
 }
 
 // ─── Mobile Hamburger ─────────────────────────────────────────────────────────
@@ -94,7 +118,6 @@
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
 }
 
-// Hamburger adapts to white header when scrolled
 .header.is-compact .nav-toggle {
   border-color: rgba(0, 0, 0, 0.14);
   background: rgba(0, 0, 0, 0.04);
@@ -205,7 +228,6 @@
     transform: none;
   }
 
-  // Desktop nav links — white on transparent/dark header
   .nav__link {
     position: relative;
     padding: 7px 11px;
@@ -246,7 +268,6 @@
     transform: scaleX(1);
   }
 
-  // When header is scrolled (white bg) — switch links to dark
   .header.is-compact .nav__link {
     color: var(--color-text);
   }
@@ -272,10 +293,6 @@
     height: 76px;
   }
 
-  .header__logo-image {
-    width: 186px;
-  }
-
   .nav {
     gap: 4px;
   }
@@ -292,10 +309,6 @@
 }
 
 @media (min-width: $bp-xl) {
-  .header__logo-image {
-    width: 200px;
-  }
-
   .nav {
     gap: 6px;
   }
